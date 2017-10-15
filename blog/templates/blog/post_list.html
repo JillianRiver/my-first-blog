@@ -2,16 +2,14 @@
   <head>
       <title> Whoo AF! </title>
   </head>
-  <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-    <em>Emphasis!</em>
-    <strong>Strong!</strong>
+  <div>
+      <h1><a href="/">Django Girls Blog</a></h1>
+  </div>
 
-    <ul>
-      <li>first</li>
-      <li>second</li>
-      <li>third</li>
-    </ul>
-  </body>
-</html>
+  {% for post in posts %}
+      <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
